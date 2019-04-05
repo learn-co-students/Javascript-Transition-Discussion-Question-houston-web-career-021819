@@ -18,14 +18,13 @@ function saveLincoln() {
   const zomb = document.querySelector("#foreground");
   const intervalBox = document.querySelector("#interval");
   const interval = intervalBox.value;
-  const hiddenMessage = document.querySelector("#hidden-message");
+  const hiddenMessage = document.querySelector("h3");
   zomb.style.opacity = 1;
-  hiddenMessage.style.display = "inline";
-  hiddenMessage.style.opacity = 0.0;
   const save = setInterval(function() {
     if (zomb.style.opacity > 0) {
       zomb.style.opacity -= 0.01;
-      hiddenMessage.style.opacity += 0.01;
+      hiddenMessage.style.opacity =
+        parseFloat(hiddenMessage.style.opacity) + 0.01;
     } else {
       clearInterval(save);
     }
